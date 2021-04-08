@@ -26,7 +26,10 @@ join sakila.film_category fc
 on f.film_id=fc.film_id
 join sakila.category c
 on fc.category_id = c.category_id
-group by c.category_id;
+group by c.category_id
+order by round(avg(f.length),2) desc;
+#limit 1;
+#longest is sports with 128,2 min avg
 
 #4.Display the 2 most frequently rented movies in descending order.
 #rental, inventory, film
